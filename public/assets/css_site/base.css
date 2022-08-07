@@ -1,0 +1,55 @@
+body{
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.form_login{
+    min-height: 500px;
+    height: auto;
+    justify-content: center;
+    margin: auto;
+    margin-top: 0;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+
+    background: rgba( 255, 255, 255, 0.55 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 9px );
+    -webkit-backdrop-filter: blur( 9px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+.form_login h2{
+    text-align: center;
+}
+.form_login .erro{
+    text-align: center;
+    color: #fff;
+    padding: 10px;
+    border-radius: 3px;
+    margin: 10px;
+    background-color: brown;
+}
+.form_login .btn-group{
+    margin: auto;
+    margin-top: 0;
+}
+.form_login img{
+    height: 150px;
+    width: 100%;
+    margin-bottom: 15px;
+}
+.notfound{
+    padding: 25px;
+    border-radius: 5px;
+    background: rgba( 255, 255, 255, 0.55 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 9px );
+    -webkit-backdrop-filter: blur( 9px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+.form-control, .btn{
+    border-radius: 15px;
+}
