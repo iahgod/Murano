@@ -1,6 +1,8 @@
 {
     "require": {
-        "clancats/hydrahon": "^1.1"
+        "clancats/hydrahon": "^1.1",
+        "phpmailer/phpmailer": "^6.5",
+        "mpdf/mpdf": "^8.1"
     },
     "autoload": {
         "psr-4": {
