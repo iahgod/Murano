@@ -21,7 +21,7 @@ class MenuController extends Controller {
     public function index() {
         $Menu = Menu_Admin::select()->get();
         $Menu_Admin_Sub = Menu_Admin_Sub::select()->get();
-        $this->render('Menu_Admin/Lista', [
+        $this->render('admin/menu/lista', [
             'loggedUser' => $this->loggedUser,
             'menu' => $this->menu_admin($this->loggedUser->id),
             'Menu' => $Menu,
@@ -31,7 +31,9 @@ class MenuController extends Controller {
     public function form($atts = []){
         //Se tiver id vai mostrar form para editar
         $Menu = Menu_Admin::select()->get();
+       
         if(!empty($atts['id'])) {
+            $id = $atts['id'];
             $Menu_Admin = Menu_Admin::select()->where('id', $id)->one();
             if(!$Menu_Admin){
                 Mensagem::sucesso('Menu_Admin não encontrado!');
@@ -39,9 +41,9 @@ class MenuController extends Controller {
             }
 
             $titulo = $Menu_Admin['titulo'];
-            $id = $atts['id'];
+            
 
-            $this->render('Menu_Admin/Form', [
+            $this->render('admin/menu/form', [
                 'loggedUser' => $this->loggedUser,
                 'titulo' => $titulo,
                 'Menu_Admin' => $Menu_Admin,
@@ -52,7 +54,7 @@ class MenuController extends Controller {
             //Se não vai abrir FORM de inserir
             $titulo = 'Novo';
 
-            $this->render('Menu_Admin/Form', [
+            $this->render('admin/menu/form', [
                 'loggedUser' => $this->loggedUser,
                 'titulo' => $titulo,
                 'menu' => $this->menu_admin($this->loggedUser->id),
@@ -64,42 +66,42 @@ class MenuController extends Controller {
     public function action($atts = []){
         $dados = [];
 
-            foreach(['titulo', 'icone', 'ordem', 'ativo', 'url'] as $item){
+        foreach(['titulo', 'icone', 'ordem', 'ativo', 'url'] as $item){
 
+            if(filter_input(INPUT_POST, $item)){
                 $dados[$item] = filter_input(INPUT_POST, $item);
-
-            }
-
-            if(!$dados){
+            }else{
                 Mensagem::erro('É necessário enviar todos os dados!');
                 $this->voltaPagina();
             }
 
-            Menu_Admin::insert([$dados])->execute();
+        }
 
-            Mensagem::sucesso('Menu adicionado com sucesso!');
-            $this->voltaPagina();
+        Menu_Admin::insert([$dados])->execute();
+
+        Mensagem::sucesso('Menu adicionado com sucesso!');
+        $this->voltaPagina();
     }
 
     public function actionSub(){
         //Se tem id vai editar
         $dados = [];
 
-            foreach(['titulo', 'url', 'id_menu'] as $item){
+        foreach(['titulo', 'url', 'id_menu'] as $item){
 
+            if(filter_input(INPUT_POST, $item)){
                 $dados[$item] = filter_input(INPUT_POST, $item);
-
-            }
-
-            if(!$dados){
+            }else{
                 Mensagem::erro('É necessário enviar todos os dados!');
                 $this->voltaPagina();
             }
 
-            Menu_Admin_Sub::insert([$dados])->execute();
+        }
 
-            Mensagem::sucesso('Sub-Menu adicionado com sucesso!');
-            $this->voltaPagina();
+        Menu_Admin_Sub::insert([$dados])->execute();
+
+        Mensagem::sucesso('Sub-Menu adicionado com sucesso!');
+        $this->voltaPagina();
 
     }
 

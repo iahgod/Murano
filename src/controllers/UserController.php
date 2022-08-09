@@ -17,7 +17,7 @@ class UserController extends Controller {
     }
     public function conta() {
         
-        $this->render('user/minha-conta', [
+        $this->render('admin/user/minha-conta', [
             'loggedUser' => $this->loggedUser,
             'menu' => $this->menu_admin($this->loggedUser->id)
         ]);

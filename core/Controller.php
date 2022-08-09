@@ -94,7 +94,7 @@ class Controller {
         return $flash;
     }
 
-    public function menu_admin($id){
+    public static function menu_admin($id){
 
         $grupo_permissoes = DB::table('grupos_permissoes')->select()->where('id_grupo', $id)->one();
         $menusUser = explode('.', $grupo_permissoes['menus']);
@@ -157,6 +157,7 @@ class Controller {
 
     public function voltaPagina(){
         header("Location: ".$_SERVER['HTTP_REFERER']."");
+        exit;
     }
 
     public function dd($code){
