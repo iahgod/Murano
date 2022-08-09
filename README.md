@@ -34,6 +34,8 @@ git clone git@github.com:iahgod/Murano.git
 
 É necessário rodar o composer install na pasta principal do projeto.
 
+Na UI foi utilizado template NiceAdmin: https://bootstrapmade.com/demo/NiceAdmin/
+
 
 ## Authors
 
