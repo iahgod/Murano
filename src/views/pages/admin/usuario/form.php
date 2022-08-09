@@ -1,6 +1,6 @@
 <?=$render('header', ['loggedUser'=>$loggedUser, 'admin'=>true, 'title'=>$titulo.' usuário', 'menu'=>$menu]);?>
 
-<?=$render('components/pagetittle', ['title'=>'Home', 'breadcrumb'=>['Usuário', $titulo]]);?>
+<?=$render('components/pagetittle', ['title'=>'Usuários', 'breadcrumb'=>['Usuário', $titulo]]);?>
 
 <section class="section">
     <div class="row">

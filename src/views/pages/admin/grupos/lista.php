@@ -1,6 +1,6 @@
 <?=$render('header', ['loggedUser'=>$loggedUser, 'admin'=>true, 'title'=>'Lista de grupos', 'menu'=>$menu]);?>
 
-<?=$render('components/pagetittle', ['title'=>'Home', 'breadcrumb'=>['Grupos', 'Lista']]);?>
+<?=$render('components/pagetittle', ['title'=>'Grupos', 'breadcrumb'=>['Grupos', 'Lista']]);?>
 
 <section class="section">
     <div class="row">
