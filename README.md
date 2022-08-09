@@ -8,7 +8,7 @@ aula que fiz, no B7 Web.
 
 
 
-![Logo](https://res.cloudinary.com/murano-inc/image/upload/v1659913275/Murano/MURANO_FRK_j3sx0b.png)
+![Logo](https://res.cloudinary.com/murano-inc/image/upload/v1660009137/icones/fundo_mijid8.png)
 
 
 ## Lessons Learned
