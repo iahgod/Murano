@@ -10,7 +10,7 @@ use \src\Constant;
 class LoginController extends Controller {
 
     public function signin() {
-        $this->render('signin', [
+        $this->render('login/signin', [
             'flash' => $this->getFlash()
         ]);
     }
@@ -38,7 +38,7 @@ class LoginController extends Controller {
 
         if(!\src\Constant::ADMIN_CADASTRO){$this->render('erro', ['mensagem' => 'ERRO 401 - Autorização requerida.']);exit;}
 
-        $this->render('signup', [
+        $this->render('login/signup', [
             'flash' => $this->getFlash()
         ]);
     }
@@ -81,7 +81,7 @@ class LoginController extends Controller {
             $flash = $_SESSION['flash'];
             $_SESSION['flash'] = '';
         }
-        $this->render('esqueceu_senha', [
+        $this->render('login/esqueceu_senha', [
             'flash' => $flash
         ]);
     }
