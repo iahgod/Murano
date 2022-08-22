@@ -2,7 +2,7 @@
 namespace src\handlers;
 
 use \src\models\User;
-use \core\DB;
+use \murano\DB;
 
 class UserHandler {
 
@@ -65,7 +65,8 @@ class UserHandler {
             'senha' => $hash,
             'nome' => $name,
             'token' => $token,
-            'criado_em' => date('Y/m/d h:i')
+            'criado_em' => date('Y/m/d h:i'),
+            'id_grupo' => 2
         ])->execute();
 
         return $token;

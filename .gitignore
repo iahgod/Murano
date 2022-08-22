@@ -1,1 +1,3 @@
-src/Config.php
+composer.phar
+/vendor/
+.DS_Store

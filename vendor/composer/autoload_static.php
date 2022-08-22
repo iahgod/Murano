@@ -4,39 +4,16 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitc6fe5907bb07123200c46e88fd6fb189
+class ComposerStaticInit51172de691364993bf1869e37401a937
 {
-    public static $files = array (
-        '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
-    );
-
     public static $prefixLengthsPsr4 = array (
         's' => 
         array (
             'src\\' => 4,
-            'setasign\\Fpdi\\' => 14,
         ),
         'c' => 
         array (
             'core\\' => 5,
-        ),
-        'P' => 
-        array (
-            'Psr\\Log\\' => 8,
-            'Psr\\Http\\Message\\' => 17,
-            'PHPMailer\\PHPMailer\\' => 20,
-        ),
-        'M' => 
-        array (
-            'Mpdf\\' => 5,
-        ),
-        'H' => 
-        array (
-            'Http\\Message\\' => 13,
-        ),
-        'D' => 
-        array (
-            'DeepCopy\\' => 9,
         ),
         'C' => 
         array (
@@ -49,37 +26,9 @@ class ComposerStaticInitc6fe5907bb07123200c46e88fd6fb189
         array (
             0 => __DIR__ . '/../..' . '/src',
         ),
-        'setasign\\Fpdi\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/setasign/fpdi/src',
-        ),
         'core\\' => 
         array (
             0 => __DIR__ . '/../..' . '/core',
-        ),
-        'Psr\\Log\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/psr/log/src',
-        ),
-        'Psr\\Http\\Message\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/psr/http-message/src',
-        ),
-        'PHPMailer\\PHPMailer\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/phpmailer/phpmailer/src',
-        ),
-        'Mpdf\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/mpdf/mpdf/src',
-        ),
-        'Http\\Message\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/php-http/message-factory/src',
-        ),
-        'DeepCopy\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy',
         ),
         'ClanCats\\Hydrahon\\' => 
         array (
@@ -94,9 +43,9 @@ class ComposerStaticInitc6fe5907bb07123200c46e88fd6fb189
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitc6fe5907bb07123200c46e88fd6fb189::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitc6fe5907bb07123200c46e88fd6fb189::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInitc6fe5907bb07123200c46e88fd6fb189::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit51172de691364993bf1869e37401a937::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit51172de691364993bf1869e37401a937::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit51172de691364993bf1869e37401a937::$classMap;
 
         }, null, ClassLoader::class);
     }

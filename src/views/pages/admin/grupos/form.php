@@ -1,4 +1,4 @@
-<?=$render('header', ['loggedUser'=>$loggedUser, 'admin'=>true, 'title'=>$titulo.' grupo', 'menu'=>$menu]);?>
+<?=$render('partials/headerAdmin', ['loggedUser'=>$loggedUser, 'admin'=>true, 'title'=>$titulo.' grupo']);?>
 
 <?=$render('components/pagetittle', ['title'=>'Grupos', 'breadcrumb'=>['Grupo', $titulo]]);?>
 
@@ -26,23 +26,56 @@
                 <h4 class="mb-1 mt-1">Permissões</h4>
 
                 <div class="col-12">
+                <br><h4>Menus</h4>
                     <?php foreach($listaMenus['menus'] as $item):?>
+
+                        <?php if($item['id_pai'] == null):?>
+
+                            <?php if(in_array($item['id'], $listaMenus['menusUser'])):?>
+
+                                <div class="form-check">
+                                    <input class="form-check-input" name="<?=$item['id']?>" type="checkbox" checked role="switch" id="<?=$item['titulo']?><?=$item['id']?>">
+                                    <label class="form-check-label" for="<?=$item['titulo']?><?=$item['id']?>"><?=$item['id']?> - <?=$item['titulo']?></label>
+                                </div>
+
+                            <?php else:?>
+
+                                <div class="form-check">
+                                    <input class="form-check-input" name="<?=$item['id']?>" type="checkbox" role="switch" id="<?=$item['titulo']?><?=$item['id']?>">
+                                    <label class="form-check-label" for="<?=$item['titulo']?><?=$item['id']?>"><?=$item['id']?> - <?=$item['titulo']?></label>
+                                </div>
+
+                            <?php endif;?>
+
+                        <?php endif;?>
+
+                    <?php endforeach;?>
+
+                    <br><h4>Sub menus</h4>
+
+                    <?php foreach($listaMenus['menus'] as $item):?>
+
+                    <?php if($item['id_pai'] != null):?>
 
                         <?php if(in_array($item['id'], $listaMenus['menusUser'])):?>
 
-                            <div class="form-check">
-                                <input class="form-check-input" name="<?=$item['url']?>" type="checkbox" checked role="switch" id="<?=$item['titulo']?><?=$item['id']?>">
-                                <label class="form-check-label" for="<?=$item['titulo']?><?=$item['id']?>"><?=$item['titulo']?></label>
-                            </div>
+                        <div class="form-check">
+                            <input class="form-check-input" name="<?=$item['id']?>" type="checkbox" checked role="switch" id="<?=$item['titulo']?><?=$item['id']?>">
+                            <label class="form-check-label" for="<?=$item['titulo']?><?=$item['id']?>">ID_PAI: <?=$item['id_pai']?> | <?=$item['titulo']?></label>
+                        </div>
 
                         <?php else:?>
 
-                            <div class="form-check">
-                                <input class="form-check-input" name="<?=$item['url']?>" type="checkbox" role="switch" id="<?=$item['titulo']?><?=$item['id']?>">
-                                <label class="form-check-label" for="<?=$item['titulo']?><?=$item['id']?>"><?=$item['titulo']?></label>
-                            </div>
+                        <div class="form-check">
+                            <input class="form-check-input" name="<?=$item['id']?>" type="checkbox" role="switch" id="<?=$item['titulo']?><?=$item['id']?>">
+                            <label class="form-check-label" for="<?=$item['titulo']?><?=$item['id']?>">ID_PAI: <?=$item['id_pai']?> | <?=$item['titulo']?></label>
+                        </div>
 
                         <?php endif;?>
+
+                    <?php endif;?>
+
+
 
                     <?php endforeach;?>
                 </div>
@@ -64,4 +97,4 @@
 
 </section>
 
-<?=$render('footer', ['loggedUser'=>$loggedUser]);?>
+<?=$render('partials/footer', ['loggedUser'=>$loggedUser]);?>

@@ -1,4 +1,4 @@
-<?=$render('header', ['loggedUser'=>$loggedUser, 'admin'=>true, 'title'=>'Lista de grupos', 'menu'=>$menu]);?>
+<?=$render('partials/headerAdmin', ['loggedUser'=>$loggedUser, 'admin'=>true, 'title'=>'Lista de grupos']);?>
 
 <?=$render('components/pagetittle', ['title'=>'Grupos', 'breadcrumb'=>['Grupos', 'Lista']]);?>
 
@@ -23,7 +23,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach($grupos as $item):?>
+                    <?php foreach($lista as $item):?>
                     <tr>
                         <th scope="row"><?=$item['id']?></th>
                         <td><?=$item['descricao']?></td>
@@ -43,4 +43,4 @@
     </div>
 </section>                    
 
-<?=$render('footer', ['loggedUser'=>$loggedUser]);?>
+<?=$render('partials/footer', ['loggedUser'=>$loggedUser]);?>

@@ -1,8 +1,12 @@
 if($('.tabela')){
-
+    $('.tabela').addClass('table table-striped table-bordered table-hover table-sm');
     $(document).ready( function () {
         $('.tabela').DataTable({
-        ordering: true,
+        ordering: false,
+        lengthMenu: [
+            [25, 25, 50, -1],
+            [25, 25, 50, 'All'],
+        ],
         language: {
             processing:     "Processando...",
             search:         "Procurar:",
@@ -52,7 +56,7 @@ if($('.tabela')){
                 }
             ],
         });
-        $('.tabela').addClass('table table-striped table-bordered table-hover table-sm');
+        
     } );
 
 }

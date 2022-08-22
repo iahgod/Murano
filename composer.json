@@ -1,13 +1,11 @@
 {
-    "name": "murano/murano",
-	"type": "framework",
-	"description": "Murano framework",
-	"homepage": "https://iahgod.com.br",
-	"authors": [
-		{
-			"name": "Iago Vinícios",
-			"role": "Developer,",
-            "email": "iahgod25@gmail.com"
-		}
-	]
+    "require": {
+        "clancats/hydrahon": "^1.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "core\\": "core/",
+            "src\\": "src/"
+        }
+    }
 }

@@ -56,5 +56,4 @@ class Model {
         return self::$_h->delete();
     }
 
-
 }

@@ -1,43 +1,33 @@
+## Instalação
+Você pode clonar este repositório OU baixar o .zip
 
-# Murano
+Ao descompactar, é necessário rodar o **composer** pra instalar as dependências e gerar o *autoload*.
 
-Murano é um framework em PHP, criado por mim, com intuição de minimizar tempo em futuros projetos.
-Atualmente está usando o PHP 7.4, com MVC. Criado a partir de um modelo de um projeto de uma 
-aula que fiz, no B7 Web.
+Vá até a pasta do projeto, pelo *prompt/terminal* e execute:
+> composer install
 
+Depois é só aguardar.
 
+## Configuração
+Todos os arquivos de **configuração** e aplicação estão dentro da pasta *src*.
 
+As configurações de Banco de Dados e URL estão no arquivo *src/Config.php*
 
-![Logo](https://prnt.sc/bhAaT351C9eP)
+É importante configurar corretamente a constante *BASE_DIR*:
+> const BASE_DIR = '/**PastaDoProjeto**/public';
 
+## Uso
+Você deve acessar a pasta *public* do projeto.
 
-## Lessons Learned
+O ideal é criar um ***alias*** específico no servidor que direcione diretamente para a pasta *public*.
 
-Criando este framework, aprendi várias coisas, sobre clean code, maneiras de usar
- classes, funções, trabalhar melhor com banco de dados e várias coisas a mais.
+## Modelo de MODEL
+```php
+<?php
+namespace src\models;
+use \core\Model;
 
+class Usuario extends Model {
 
-## License
-
-[MIT](https://choosealicense.com/licenses/mit/)
-
-
-## Installation
-
-Install my-project with GIT
-
-git clone https://github.com/iahgod/Murano.git
-or
-git clone git@github.com:iahgod/Murano.git
-    
-## Appendix
-
-É necessário rodar o composer install na pasta principal do projeto.
-
-Na UI foi utilizado template NiceAdmin: https://bootstrapmade.com/demo/NiceAdmin/
-
-
-## Authors
-
-- [@iahgod](https://www.github.com/iahgod)
-
+}
+```

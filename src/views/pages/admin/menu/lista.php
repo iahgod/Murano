@@ -1,6 +1,6 @@
-<?=$render('header', ['loggedUser'=>$loggedUser, 'admin'=>true, 'title'=>'Lista de Menus', 'menu'=>$menu]);?>
+<?=$render('partials/headerAdmin', ['loggedUser'=>$loggedUser, 'title' => $titulo]);?>
 
-<?=$render('components/pagetittle', ['title'=>'Menus', 'breadcrumb'=>['Sidebar', 'Lista']]);?>
+<?=$render('components/pagetittle', ['title'=>$titulo, 'breadcrumb'=>['Lista']]);?>
 
 <section class="section">
     <div class="row">
@@ -18,28 +18,16 @@
             <!-- Tabela -->
             <?=$render('components/tabela', 
             ['titulos'=>[
-                'Titulo', 'Url', 'Ordem', 'Status'
+                'Titulo', 'Menu Pai', 'Url', 'Ordem', 'Status'
             ],
             'names'=>[
                 'titulo'    => ['titulo','text'],
+                'id_pai'    => ['id_pai','text'],
                 'url'       => ['url',   'text'],
                 'ordem'     => ['ordem', 'text'],
                 'ativo'     => ['ativo', 'status'],
             ],
-            'dados'=>$Menu, 'pagina'=>'menu', 'btnStatus'=>true, 'btnEditar'=>false, 'deleteP'=>'']);?>
-
-            <h5 class="card-title">Lista de sub-menus</h5>
-            
-            <!-- Tabela -->
-            <?=$render('components/tabela', 
-            ['titulos'=>[
-                'Titulo', 'Url'
-            ],
-            'names'=>[
-                'titulo'    => ['titulo','text'],
-                'url'       => ['url',   'text'],
-            ],
-            'dados'=>$MenuSub, 'pagina'=>'sub', 'btnStatus'=>false, 'btnEditar'=>false, 'deleteP'=>'admin/Menu/deleteSub']);?>
+            'dados'=>$lista, 'pagina'=>'menu', 'btnStatus'=>true, 'btnEditar'=>false, 'deleteP'=>'', 'podeExcluir'=>true]);?>
             
 
             
@@ -50,7 +38,6 @@
 
     </div>
 </section>
-
                         
-
-<?=$render('footer', ['loggedUser'=>$loggedUser]);?>
+                        
+<?=$render('partials/footer', ['loggedUser'=>$loggedUser]);?>
